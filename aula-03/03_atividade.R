@@ -14,6 +14,14 @@ salarios <- read_csv("aula-03/data/201802_dados_salarios_servidores.csv.gz")
 ## 
 ### # ####
 
+salarios %>% select(REMUNERACAO_REAIS, REMUNERACAO_DOLARES)
+
+## Dólar: R$ 3,2421
+
+X1 <- salarios %>% mutate( REMUNERACAO_FINAL = REMUNERACAO_REAIS + (REMUNERACAO_DOLARES*3.24) ) %>% 
+  filter(REMUNERACAO_FINAL > 1000) %>% 
+  select (REMUNERACAO_FINAL)
+
 
 ### 2 ####
 ## 
