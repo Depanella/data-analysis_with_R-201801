@@ -12,7 +12,9 @@ load("aula-02/data/dados_exercicio.RData")
 ##         quero ver uma saída na Console.
 ### # ####
 
-
+x1 <- acessos_alunos
+x1
+str(x1)
 
 ### 2 ###
 ## Quantos elementos a variável acessos_alunos possui? Utilize uma função do R que retorna o tamanho da variável.
@@ -20,6 +22,9 @@ load("aula-02/data/dados_exercicio.RData")
 ## Dica: Vimos um exemplo no mesmo material sobre estruturas de dados
 ### # ###
 
+ ##São 32 elementos na lista
+ 
+length(x1)
 
 
 ### 3 ###
@@ -31,6 +36,7 @@ load("aula-02/data/dados_exercicio.RData")
 ## Dica 2: Vimos exemplos disto nos materiais dos tipos numéricos e das estruturas de dados.
 ### # ###
 
+paste("o aluno <alu201830485> realizou",acessos_alunos$alu201830485, "acessos")
 
 
 ### 4 ###
@@ -44,13 +50,15 @@ acessos <- unlist(acessos_alunos)
 ## 3. Determine o tamanho do vetor da operação 2, imprimindo o resultado na Console
 ### # ###
 
+x2 <- which(acessos>acessos_alunos$alu201830485)
 
+length(x2)
 
 ### 5 ###
 ## Combine todas as etapas acima em uma única chamada, sem a criação dos vetores auxiliares
 ### # ###
 
-
+length(which(unlist(acessos_alunos)>acessos_alunos$alu201830485))
 
 ### 6 ###
 ## Agora determine quantos colegas fizeram menos acessos que você. 
@@ -59,7 +67,7 @@ acessos <- unlist(acessos_alunos)
 ## Dica: Lembre que falamos sobre como o R faz conversões implícitas entre o tipo lógico e tipos numéricos
 ### # ###
 
-
+sum(acessos_alunos<=acessos_alunos$alu201830485)
 
 ### 7 ###
 ## Supondo que eu quero atribuir uma nota de participação baseada na quantidade de acessos, com a seguinte definição:
